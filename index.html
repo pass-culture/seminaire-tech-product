@@ -1,0 +1,450 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<title>Séminaire Tech x Product — 18 novembre 2026</title>
+<script src="./vendor/react.js"></script>
+<script src="./vendor/react-dom.js"></script>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;0,800;1,700&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#FFFFFF}
+html{scroll-behavior:smooth}
+a{color:#3C0094}a:hover{color:#1E0050}
+</style>
+</helmet>
+<div style="font-family: Montserrat, system-ui, sans-serif; color: #1A1A2E; background: #FFFFFF; width: 100%; min-height: 100%">
+
+<!-- ===== Barre de navigation ===== -->
+<header style="position: sticky; top: 0; z-index: 10; background: rgba(255,255,255,0.92); backdrop-filter: blur(10px); border-bottom: 1px solid #ECE6FA">
+<div style="max-width: 1160px; margin: 0 auto; padding: 14px 24px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px 24px">
+<a href="#top" style="display: flex; align-items: center; min-height: 44px" aria-label="pass Culture — haut de page"><img src="./assets/7ef6845d605b8510f953ae04baa4040c.png" alt="pass Culture" style="height: 34px; width: auto; display: block"></a>
+<nav aria-label="Sections" style="display: flex; flex-wrap: wrap; gap: 4px">
+<a href="#programme" style="display: inline-flex; align-items: center; min-height: 44px; padding: 0 14px; border-radius: 999px; font-size: 14px; font-weight: 600; text-decoration: none; color: #1E0050">Programme</a>
+<a href="#avant" style="display: inline-flex; align-items: center; min-height: 44px; padding: 0 14px; border-radius: 999px; font-size: 14px; font-weight: 600; text-decoration: none; color: #1E0050">Avant de venir</a>
+<a href="#acces" style="display: inline-flex; align-items: center; min-height: 44px; padding: 0 14px; border-radius: 999px; font-size: 14px; font-weight: 600; text-decoration: none; color: #1E0050">Accès</a>
+<a href="#apres" style="display: inline-flex; align-items: center; min-height: 44px; padding: 0 14px; border-radius: 999px; font-size: 14px; font-weight: 600; text-decoration: none; color: #1E0050">Afterwork</a>
+</nav>
+</div>
+</header>
+
+<!-- ===== Hero ===== -->
+<section id="top" style="max-width: 1160px; margin: 0 auto; padding: 72px 24px 88px; display: flex; flex-wrap: wrap; align-items: center; gap: 56px">
+<div style="flex: 1 1 480px; min-width: 0; display: flex; flex-direction: column; gap: 24px">
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 20px 28px">
+<div style="width: 116px; border-radius: 20px; overflow: hidden; background: #FFFFFF; border: 2px solid #3C0094; box-shadow: 6px 6px 0 #A77BFF; transform: rotate(-3deg); display: flex; flex-direction: column; align-items: stretch; text-align: center">
+<p style="margin: 0; padding: 7px 0; background: #3C0094; color: #FFFFFF; font-size: 12px; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase">Nov. 2026</p>
+<p style="margin: 0; padding-top: 4px; font-size: 54px; line-height: 1; font-weight: 800; color: #1E0050; letter-spacing: -0.03em">18</p>
+<p style="margin: 0; padding: 2px 0 10px; font-size: 13px; font-weight: 700; color: #3C0094">Mercredi</p>
+</div>
+<div style="display: flex; align-items: center; gap: 12px">
+<svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#3C0094" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"></path><circle cx="12" cy="9.5" r="2.5"></circle></svg>
+<div>
+<p style="margin: 0; font-size: 16px; font-weight: 700; color: #1E0050">Cité des sciences et de l'industrie</p>
+<p style="margin: 0; font-size: 14px; font-weight: 500; color: #4B4766">Paris 19e</p>
+</div>
+</div>
+</div>
+<div style="display: flex; flex-direction: column; gap: 10px">
+<h1 style="margin: 0; font-size: clamp(2.6rem, 6vw, 4.6rem); line-height: 1.02; font-weight: 800; letter-spacing: -0.02em; color: #0F0A1E">Séminaire Tech x Product</h1>
+<svg width="160" height="18" viewBox="0 0 160 18" aria-hidden="true" style="display: block"><path d="M3 11 C 18 1, 30 1, 44 9 S 70 17, 84 9 S 110 1, 124 9 S 146 15, 157 7" fill="none" stroke="#F2836B" stroke-width="4" stroke-linecap="round"></path></svg>
+</div>
+<p style="margin: 0; font-size: 20px; line-height: 1.5; font-weight: 500; color: #3C0094; max-width: 34ch">L'IA dans la tech et le produit — retours d'expériences.</p>
+<div style="display: flex; flex-wrap: wrap; gap: 10px">
+<span style="display: inline-flex; align-items: center; gap: 8px; padding: 10px 16px; border-radius: 999px; background: #F1EBFF; font-size: 14px; font-weight: 600; color: #1E0050">9h15 · Accueil café</span>
+<span style="display: inline-flex; align-items: center; gap: 8px; padding: 10px 16px; border-radius: 999px; background: #F1EBFF; font-size: 14px; font-weight: 600; color: #1E0050">Salle Pain-Levé · niveau -1</span>
+<span style="display: inline-flex; align-items: center; gap: 8px; padding: 10px 16px; border-radius: 999px; background: #F1EBFF; font-size: 14px; font-weight: 600; color: #1E0050">18h · Afterwork au 211</span>
+</div>
+<div style="display: flex; flex-wrap: wrap; gap: 12px; padding-top: 8px">
+<a href="#programme" style="display: inline-flex; align-items: center; justify-content: center; min-height: 52px; padding: 0 28px; border-radius: 999px; background: #3C0094; color: #FFFFFF; font-size: 16px; font-weight: 700; text-decoration: none">Voir le programme</a>
+<a href="#acces" style="display: inline-flex; align-items: center; justify-content: center; min-height: 52px; padding: 0 28px; border-radius: 999px; background: #FFFFFF; color: #3C0094; border: 2px solid #3C0094; font-size: 16px; font-weight: 700; text-decoration: none">Comment venir</a>
+</div>
+</div>
+<div style="flex: 1 1 340px; min-width: 0; display: flex; justify-content: center; padding: 24px 0">
+<div style="position: relative; width: 300px; height: 420px">
+<div style="position: absolute; inset: 0; border-radius: 28px; background: #A77BFF; transform: rotate(6deg) translate(18px, 10px)"></div>
+<div style="position: absolute; inset: 0; border-radius: 28px; background: #EDE4FF; overflow: hidden; transform: rotate(-3deg); box-shadow: 0 24px 60px rgba(60,0,148,0.22)">
+<img src="./assets/f7ad437fb5c31790bcf3b518afaa8fa0.jpg" alt="La Cité des sciences et de l'industrie et la Géode, vues de l'extérieur" style="width: 100%; height: 100%; object-fit: cover; object-position: 66% center; display: block">
+</div>
+<svg width="70" height="40" viewBox="0 0 70 40" aria-hidden="true" style="position: absolute; right: -40px; bottom: 40px"><path d="M4 30 C 18 10, 34 10, 40 22 S 58 32, 66 8" fill="none" stroke="#2CD3A8" stroke-width="4" stroke-linecap="round"></path></svg>
+</div>
+</div>
+</section>
+
+<!-- ===== Programme ===== -->
+<section id="programme" style="background: #FAF7FF; padding: 88px 0">
+<div style="max-width: 1160px; margin: 0 auto; padding: 0 24px; display: flex; flex-direction: column; gap: 56px">
+<div style="display: flex; flex-direction: column; gap: 12px">
+<p style="margin: 0; font-size: 14px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #3C0094">Programme</p>
+<h2 style="margin: 0; font-size: clamp(2rem, 4vw, 3rem); font-weight: 800; letter-spacing: -0.01em; color: #0F0A1E">Une journée, sept retours d'expériences</h2>
+<svg width="120" height="16" viewBox="0 0 120 16" aria-hidden="true"><path d="M3 10 C 14 2, 24 2, 34 8 S 54 14, 64 8 S 84 2, 94 8 S 110 13, 117 6" fill="none" stroke="#F2836B" stroke-width="4" stroke-linecap="round"></path></svg>
+</div>
+
+<!-- Matinée -->
+<div style="display: flex; flex-direction: column; gap: 14px">
+<div style="display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 8px; padding-bottom: 6px">
+<h3 style="margin: 0; font-size: 26px; font-weight: 800; color: #0F0A1E">Matinée</h3>
+<p style="margin: 0; font-size: 16px; font-weight: 700; color: #3C0094">9h15 – 12h45</p>
+</div>
+
+<!-- Accueil -->
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 8px 24px; padding: 16px 24px; border-radius: 18px; background: #DDF6FB">
+<p style="margin: 0; flex: 0 0 132px; font-size: 16px; font-weight: 800; color: #1E0050">9h15 – 9h45</p>
+<p style="margin: 0; flex: 1 1 300px; font-size: 17px; font-weight: 700; color: #1E0050">Accueil · café</p>
+<sc-if value="{{live.s0}}" hint-placeholder-val="{{ false }}"><span style="display: inline-flex; align-items: center; padding: 6px 12px; border-radius: 999px; background: #3C0094; color: #FFFFFF; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em">En cours</span></sc-if>
+</div>
+
+<!-- Lancement -->
+<article style="display: flex; flex-wrap: wrap; gap: 16px 24px; padding: 24px; border-radius: 20px; background: #F3E6F5">
+<p style="margin: 0; flex: 0 0 132px; font-size: 16px; font-weight: 800; color: #1E0050">9h45 – 10h00</p>
+<div style="flex: 1 1 420px; min-width: 0; display: flex; flex-direction: column; gap: 14px">
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px">
+<span style="display: inline-flex; padding: 4px 10px; border-radius: 999px; background: #FFFFFF; font-size: 12px; font-weight: 700; color: #3C0094">pass Culture</span>
+<sc-if value="{{live.s1}}" hint-placeholder-val="{{ false }}"><span style="display: inline-flex; padding: 4px 10px; border-radius: 999px; background: #3C0094; color: #FFFFFF; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em">En cours</span></sc-if>
+</div>
+<h4 style="margin: 0; font-size: 21px; line-height: 1.3; font-weight: 700; color: #1E0050">Lancement de la journée — Trajectoire IA pass Culture</h4>
+<div style="display: flex; flex-wrap: wrap; gap: 16px 28px">
+<div style="display: flex; align-items: center; gap: 12px"><img src="./assets/242ab32c937304adbc7ac390c91aa10a.jpg" alt="Thomas" style="width: 56px; height: 56px; border-radius: 50%; object-fit: cover; border: 3px solid #CDBBFF; display: block"><div><p style="margin: 0; font-size: 15px; font-weight: 700; color: #1A1A2E">Thomas</p><p style="margin: 0; font-size: 13px; color: #4B4766">pass Culture</p></div></div>
+<div style="display: flex; align-items: center; gap: 12px"><img src="./assets/72676e38854f2a5c6e820412d0fc70ee.jpg" alt="Nicolas" style="width: 56px; height: 56px; border-radius: 50%; object-fit: cover; border: 3px solid #CDBBFF; display: block"><div><p style="margin: 0; font-size: 15px; font-weight: 700; color: #1A1A2E">Nicolas</p><p style="margin: 0; font-size: 13px; color: #4B4766">pass Culture</p></div></div>
+</div>
+</div>
+</article>
+
+<!-- Inside App -->
+<article style="display: flex; flex-wrap: wrap; gap: 16px 24px; padding: 24px; border-radius: 20px; background: #FFFFFF; border: 1px solid #E6DCFF">
+<p style="margin: 0; flex: 0 0 132px; font-size: 16px; font-weight: 800; color: #1E0050">10h00 – 10h35</p>
+<div style="flex: 1 1 420px; min-width: 0; display: flex; flex-direction: column; gap: 14px">
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px">
+<span style="display: inline-flex; padding: 4px 10px; border-radius: 999px; background: #F1EBFF; font-size: 12px; font-weight: 700; color: #3C0094">Inside App</span>
+<sc-if value="{{live.s2}}" hint-placeholder-val="{{ false }}"><span style="display: inline-flex; padding: 4px 10px; border-radius: 999px; background: #3C0094; color: #FFFFFF; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em">En cours</span></sc-if>
+</div>
+<h4 style="margin: 0; font-size: 21px; line-height: 1.3; font-weight: 700; color: #1E0050">L'IA dans la fabrication des applications : état des lieux</h4>
+<div style="display: flex; flex-wrap: wrap; gap: 16px 28px">
+<div style="display: flex; align-items: center; gap: 12px"><img src="./assets/4516d793c139b2c90729ac800c79ada3.jpg" alt="Vincent Fratarolli" style="width: 56px; height: 56px; border-radius: 50%; object-fit: cover; border: 3px solid #CDBBFF; display: block"><div><p style="margin: 0; font-size: 15px; font-weight: 700; color: #1A1A2E">Vincent Fratarolli</p><p style="margin: 0; font-size: 13px; color: #4B4766">CEO &amp; Co-founder</p></div></div>
+</div>
+</div>
+</article>
+
+<!-- BeeMyFlex -->
+<article style="display: flex; flex-wrap: wrap; gap: 16px 24px; padding: 24px; border-radius: 20px; background: #FFFFFF; border: 1px solid #E6DCFF">
+<p style="margin: 0; flex: 0 0 132px; font-size: 16px; font-weight: 800; color: #1E0050">10h40 – 11h15</p>
+<div style="flex: 1 1 420px; min-width: 0; display: flex; flex-direction: column; gap: 14px">
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px">
+<span style="display: inline-flex; padding: 4px 10px; border-radius: 999px; background: #F1EBFF; font-size: 12px; font-weight: 700; color: #3C0094">BeeMyFlex</span>
+<sc-if value="{{live.s3}}" hint-placeholder-val="{{ false }}"><span style="display: inline-flex; padding: 4px 10px; border-radius: 999px; background: #3C0094; color: #FFFFFF; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em">En cours</span></sc-if>
+</div>
+<h4 style="margin: 0; font-size: 21px; line-height: 1.3; font-weight: 700; color: #1E0050">Deux ans d'IA, sans filtre : l'humain aux commandes des agents</h4>
+<div style="display: flex; flex-wrap: wrap; gap: 16px 28px">
+<div style="display: flex; align-items: center; gap: 12px"><img src="./assets/b70ee26a8a99ad7d8ab7188c9aebb63b.jpg" alt="Gabriel Rassial et Xavier De Koninck" style="width: 56px; height: 56px; border-radius: 50%; object-fit: cover; border: 3px solid #CDBBFF; display: block"><div><p style="margin: 0; font-size: 15px; font-weight: 700; color: #1A1A2E">Gabriel Rassial &amp; Xavier De Koninck</p><p style="margin: 0; font-size: 13px; color: #4B4766">Co-fondateurs</p></div></div>
+</div>
+</div>
+</article>
+
+<!-- Pause -->
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 8px 24px; padding: 16px 24px; border-radius: 18px; background: #DDF6FB">
+<p style="margin: 0; flex: 0 0 132px; font-size: 16px; font-weight: 800; color: #1E0050">11h15 – 11h30</p>
+<p style="margin: 0; flex: 1 1 300px; font-size: 17px; font-weight: 700; color: #1E0050">Pause · café</p>
+<sc-if value="{{live.s4}}" hint-placeholder-val="{{ false }}"><span style="display: inline-flex; align-items: center; padding: 6px 12px; border-radius: 999px; background: #3C0094; color: #FFFFFF; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em">En cours</span></sc-if>
+</div>
+
+<!-- Theodo -->
+<article style="display: flex; flex-wrap: wrap; gap: 16px 24px; padding: 24px; border-radius: 20px; background: #FFFFFF; border: 1px solid #E6DCFF">
+<p style="margin: 0; flex: 0 0 132px; font-size: 16px; font-weight: 800; color: #1E0050">11h30 – 12h05</p>
+<div style="flex: 1 1 420px; min-width: 0; display: flex; flex-direction: column; gap: 14px">
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px">
+<span style="display: inline-flex; padding: 4px 10px; border-radius: 999px; background: #F1EBFF; font-size: 12px; font-weight: 700; color: #3C0094">Theodo</span>
+<sc-if value="{{live.s5}}" hint-placeholder-val="{{ false }}"><span style="display: inline-flex; padding: 4px 10px; border-radius: 999px; background: #3C0094; color: #FFFFFF; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em">En cours</span></sc-if>
+</div>
+<h4 style="margin: 0; font-size: 21px; line-height: 1.3; font-weight: 700; color: #1E0050">Faire des cadrages de meilleure qualité grâce à l'IA</h4>
+<div style="display: flex; flex-wrap: wrap; gap: 16px 28px">
+<div style="display: flex; align-items: center; gap: 12px"><img src="./assets/3a447b695724b365891b69c4fdf932da.jpg" alt="Roxane Albert" style="width: 56px; height: 56px; border-radius: 50%; object-fit: cover; border: 3px solid #CDBBFF; display: block"><div><p style="margin: 0; font-size: 15px; font-weight: 700; color: #1A1A2E">Roxane Albert</p><p style="margin: 0; font-size: 13px; color: #4B4766">Group Product Manager, AI for product</p></div></div>
+</div>
+</div>
+</article>
+
+<!-- Dinum doctrine -->
+<article style="display: flex; flex-wrap: wrap; gap: 16px 24px; padding: 24px; border-radius: 20px; background: #FFFFFF; border: 1px solid #E6DCFF">
+<p style="margin: 0; flex: 0 0 132px; font-size: 16px; font-weight: 800; color: #1E0050">12h10 – 12h45</p>
+<div style="flex: 1 1 420px; min-width: 0; display: flex; flex-direction: column; gap: 14px">
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px">
+<span style="display: inline-flex; padding: 4px 10px; border-radius: 999px; background: #F1EBFF; font-size: 12px; font-weight: 700; color: #3C0094">Dinum · IA dans l'État</span>
+<sc-if value="{{live.s6}}" hint-placeholder-val="{{ false }}"><span style="display: inline-flex; padding: 4px 10px; border-radius: 999px; background: #3C0094; color: #FFFFFF; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em">En cours</span></sc-if>
+</div>
+<h4 style="margin: 0; font-size: 21px; line-height: 1.3; font-weight: 700; color: #1E0050">Doctrine IA pour le développement</h4>
+<div style="display: flex; flex-wrap: wrap; gap: 16px 28px">
+<div style="display: flex; align-items: center; gap: 12px"><img src="./assets/267b786158c33ba670f01fd3fcc923b2.jpg" alt="Livia Fries" style="width: 56px; height: 56px; border-radius: 50%; object-fit: cover; border: 3px solid #CDBBFF; display: block"><div><p style="margin: 0; font-size: 15px; font-weight: 700; color: #1A1A2E">Livia Fries</p><p style="margin: 0; font-size: 13px; color: #4B4766">Solutions Architect</p></div></div>
+<div style="display: flex; align-items: center; gap: 12px"><img src="./assets/8e5870dca7e626d4c90ea133ab01e994.jpg" alt="Luis Arias" style="width: 56px; height: 56px; border-radius: 50%; object-fit: cover; border: 3px solid #CDBBFF; display: block"><div><p style="margin: 0; font-size: 15px; font-weight: 700; color: #1A1A2E">Luis Arias</p><p style="margin: 0; font-size: 13px; color: #4B4766">CTO ALLiaNCE</p></div></div>
+</div>
+</div>
+</article>
+</div>
+
+<!-- Déjeuner -->
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 8px 24px; padding: 20px 24px; border-radius: 18px; background: #DDF6FB">
+<p style="margin: 0; flex: 0 0 132px; font-size: 16px; font-weight: 800; color: #1E0050">12h45 – 14h10</p>
+<div style="flex: 1 1 300px; min-width: 0">
+<p style="margin: 0; font-size: 17px; font-weight: 700; color: #1E0050">Déjeuner</p>
+<p style="margin: 2px 0 0; font-size: 14px; font-weight: 500; color: #3A3556">Salle Pique-nique 2, à l'étage -1</p>
+</div>
+<sc-if value="{{live.s7}}" hint-placeholder-val="{{ false }}"><span style="display: inline-flex; align-items: center; padding: 6px 12px; border-radius: 999px; background: #3C0094; color: #FFFFFF; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em">En cours</span></sc-if>
+</div>
+
+<!-- Après-midi -->
+<div style="display: flex; flex-direction: column; gap: 14px">
+<div style="display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 8px; padding-bottom: 6px">
+<h3 style="margin: 0; font-size: 26px; font-weight: 800; color: #0F0A1E">Après-midi</h3>
+<p style="margin: 0; font-size: 16px; font-weight: 700; color: #3C0094">14h15 – 18h00</p>
+</div>
+
+<!-- Standards -->
+<article style="display: flex; flex-wrap: wrap; gap: 16px 24px; padding: 24px; border-radius: 20px; background: #FFFFFF; border: 1px solid #E6DCFF">
+<p style="margin: 0; flex: 0 0 132px; font-size: 16px; font-weight: 800; color: #1E0050">14h15 – 14h50</p>
+<div style="flex: 1 1 420px; min-width: 0; display: flex; flex-direction: column; gap: 14px">
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px">
+<span style="display: inline-flex; padding: 4px 10px; border-radius: 999px; background: #F1EBFF; font-size: 12px; font-weight: 700; color: #3C0094">Standards</span>
+<sc-if value="{{live.s8}}" hint-placeholder-val="{{ false }}"><span style="display: inline-flex; padding: 4px 10px; border-radius: 999px; background: #3C0094; color: #FFFFFF; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em">En cours</span></sc-if>
+</div>
+<h4 style="margin: 0; font-size: 21px; line-height: 1.3; font-weight: 700; color: #1E0050">Agentic Software Factory : de l'idéation à la production</h4>
+<div style="display: flex; flex-wrap: wrap; gap: 16px 28px">
+<div style="display: flex; align-items: center; gap: 12px"><img src="./assets/afc766f62ffcab904bb7c455a01b7746.jpg" alt="Arthur Micoulet" style="width: 56px; height: 56px; border-radius: 50%; object-fit: cover; border: 3px solid #CDBBFF; display: block"><div><p style="margin: 0; font-size: 15px; font-weight: 700; color: #1A1A2E">Arthur Micoulet</p><p style="margin: 0; font-size: 13px; color: #4B4766">Co-Founder</p></div></div>
+</div>
+</div>
+</article>
+
+<!-- Harness -->
+<article style="display: flex; flex-wrap: wrap; gap: 16px 24px; padding: 24px; border-radius: 20px; background: #FFFFFF; border: 1px solid #E6DCFF">
+<p style="margin: 0; flex: 0 0 132px; font-size: 16px; font-weight: 800; color: #1E0050">14h55 – 15h30</p>
+<div style="flex: 1 1 420px; min-width: 0; display: flex; flex-direction: column; gap: 14px">
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px">
+<span style="display: inline-flex; padding: 4px 10px; border-radius: 999px; background: #F1EBFF; font-size: 12px; font-weight: 700; color: #3C0094">Dinum · Data.gouv</span>
+<sc-if value="{{live.s9}}" hint-placeholder-val="{{ false }}"><span style="display: inline-flex; padding: 4px 10px; border-radius: 999px; background: #3C0094; color: #FFFFFF; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em">En cours</span></sc-if>
+</div>
+<h4 style="margin: 0; font-size: 21px; line-height: 1.3; font-weight: 700; color: #1E0050">Harness Engineering : pratiques de développement avec les LLMs</h4>
+<div style="display: flex; flex-wrap: wrap; gap: 16px 28px">
+<div style="display: flex; align-items: center; gap: 12px"><img src="./assets/e20c3db7dec1ae92fce2b580cd2ca81a.jpg" alt="Valentin Shamsnejad" style="width: 56px; height: 56px; border-radius: 50%; object-fit: cover; border: 3px solid #CDBBFF; display: block"><div><p style="margin: 0; font-size: 15px; font-weight: 700; color: #1A1A2E">Valentin Shamsnejad</p><p style="margin: 0; font-size: 13px; color: #4B4766">Ingénieur produit</p></div></div>
+</div>
+</div>
+</article>
+
+<!-- Trajectoire Tech & Produit -->
+<article style="display: flex; flex-wrap: wrap; gap: 16px 24px; padding: 24px; border-radius: 20px; background: #F3E6F5">
+<p style="margin: 0; flex: 0 0 132px; font-size: 16px; font-weight: 800; color: #1E0050">15h35 – 16h10</p>
+<div style="flex: 1 1 420px; min-width: 0; display: flex; flex-direction: column; gap: 14px">
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px">
+<span style="display: inline-flex; padding: 4px 10px; border-radius: 999px; background: #FFFFFF; font-size: 12px; font-weight: 700; color: #3C0094">pass Culture</span>
+<sc-if value="{{live.s10}}" hint-placeholder-val="{{ false }}"><span style="display: inline-flex; padding: 4px 10px; border-radius: 999px; background: #3C0094; color: #FFFFFF; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em">En cours</span></sc-if>
+</div>
+<h4 style="margin: 0; font-size: 21px; line-height: 1.3; font-weight: 700; color: #1E0050">Trajectoire IA Tech &amp; Produit</h4>
+<div style="display: flex; flex-wrap: wrap; gap: 16px 28px">
+<div style="display: flex; align-items: center; gap: 12px"><img src="./assets/242ab32c937304adbc7ac390c91aa10a.jpg" alt="Thomas" style="width: 56px; height: 56px; border-radius: 50%; object-fit: cover; border: 3px solid #CDBBFF; display: block"><div><p style="margin: 0; font-size: 15px; font-weight: 700; color: #1A1A2E">Thomas</p><p style="margin: 0; font-size: 13px; color: #4B4766">pass Culture</p></div></div>
+<div style="display: flex; align-items: center; gap: 12px"><img src="./assets/72676e38854f2a5c6e820412d0fc70ee.jpg" alt="Nicolas" style="width: 56px; height: 56px; border-radius: 50%; object-fit: cover; border: 3px solid #CDBBFF; display: block"><div><p style="margin: 0; font-size: 15px; font-weight: 700; color: #1A1A2E">Nicolas</p><p style="margin: 0; font-size: 13px; color: #4B4766">pass Culture</p></div></div>
+</div>
+</div>
+</article>
+
+<!-- Visite libre -->
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 8px 24px; padding: 20px 24px; border-radius: 18px; background: #DDF6FB">
+<p style="margin: 0; flex: 0 0 132px; font-size: 16px; font-weight: 800; color: #1E0050">16h10 – 18h00</p>
+<div style="flex: 1 1 300px; min-width: 0">
+<p style="margin: 0; font-size: 17px; font-weight: 700; color: #1E0050">Visite libre de la Cité des sciences</p>
+<p style="margin: 2px 0 0; font-size: 14px; font-weight: 500; color: #3A3556">1 carte culture = 2 entrées</p>
+</div>
+<sc-if value="{{live.s11}}" hint-placeholder-val="{{ false }}"><span style="display: inline-flex; align-items: center; padding: 6px 12px; border-radius: 999px; background: #3C0094; color: #FFFFFF; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em">En cours</span></sc-if>
+</div>
+</div>
+
+<!-- Afterwork (ligne) -->
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 8px 24px; padding: 20px 24px; border-radius: 18px; background: #3C0094; color: #FFFFFF">
+<p style="margin: 0; flex: 0 0 132px; font-size: 16px; font-weight: 800">À partir de 18h00</p>
+<div style="flex: 1 1 300px; min-width: 0">
+<p style="margin: 0; font-size: 17px; font-weight: 700">Afterwork au 211</p>
+</div>
+<sc-if value="{{live.s12}}" hint-placeholder-val="{{ false }}"><span style="display: inline-flex; align-items: center; padding: 6px 12px; border-radius: 999px; background: #FFFFFF; color: #3C0094; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em">En cours</span></sc-if>
+<a href="https://www.google.com/maps/search/?api=1&amp;query=Le+211%2C+211+avenue+Jean-Jaur%C3%A8s%2C+75019+Paris" target="_blank" rel="noopener" style="display: inline-flex; align-items: center; gap: 8px; min-height: 44px; padding: 0 18px; border-radius: 999px; background: #FFFFFF; color: #3C0094; font-size: 14px; font-weight: 700; text-decoration: none"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"></path><circle cx="12" cy="9.5" r="2.5"></circle></svg>Voir sur Google Maps</a>
+</div>
+</div>
+</section>
+
+<!-- ===== Avant de venir ===== -->
+<section id="avant" style="max-width: 1160px; margin: 0 auto; padding: 88px 24px; display: flex; flex-direction: column; gap: 32px">
+<div style="display: flex; flex-direction: column; gap: 12px">
+<p style="margin: 0; font-size: 14px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #3C0094">Avant de venir</p>
+<h2 style="margin: 0; font-size: clamp(2rem, 4vw, 3rem); font-weight: 800; letter-spacing: -0.01em; color: #0F0A1E">Deux choses à savoir</h2>
+</div>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px">
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 24px; padding: 28px; border-radius: 24px; background: #F1EBFF">
+<img src="./assets/79fb16ff8c9a8e6eb28f844320bc905c.jpg" alt="Carte culture" style="width: 168px; height: 112px; object-fit: cover; border-radius: 12px; transform: rotate(-4deg); box-shadow: 0 10px 24px rgba(60,0,148,0.18); display: block">
+<div style="flex: 1 1 220px; min-width: 0; display: flex; flex-direction: column; gap: 8px">
+<h3 style="margin: 0; font-size: 22px; font-weight: 800; color: #1E0050">Pensez à votre carte culture</h3>
+<p style="margin: 0; font-size: 16px; line-height: 1.55; color: #3A3556">Elle donne accès à la visite libre de la Cité des sciences : <strong style="color: #1E0050">1 carte = 2 entrées</strong>. Faites-en profiter nos invités et les malters.</p>
+</div>
+</div>
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 24px; padding: 28px; border-radius: 24px; background: #F1EBFF">
+<div style="width: 168px; height: 112px; border-radius: 12px; background: #FFFFFF; transform: rotate(-4deg); box-shadow: 0 10px 24px rgba(60,0,148,0.18); display: flex; align-items: center; justify-content: center">
+<svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="#3C0094" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="5" width="16" height="10" rx="1.5"></rect><path d="M2 19h20"></path><path d="M3 3l18 18"></path></svg>
+</div>
+<div style="flex: 1 1 220px; min-width: 0; display: flex; flex-direction: column; gap: 8px">
+<h3 style="margin: 0; font-size: 22px; font-weight: 800; color: #1E0050">Laissez votre ordinateur</h3>
+<p style="margin: 0; font-size: 16px; line-height: 1.55; color: #3A3556">Vos machines ne sont pas nécessaires : la journée est faite de talks et d'échanges.</p>
+</div>
+</div>
+</div>
+</section>
+
+<!-- ===== Accès ===== -->
+<section id="acces" style="background: #FAF7FF; padding: 88px 0">
+<div style="max-width: 1160px; margin: 0 auto; padding: 0 24px; display: flex; flex-direction: column; gap: 40px">
+<div style="display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 24px">
+<div style="display: flex; flex-direction: column; gap: 12px; flex: 1 1 420px">
+<p style="margin: 0; font-size: 14px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #3C0094">Accès</p>
+<h2 style="margin: 0; font-size: clamp(2rem, 4vw, 3rem); font-weight: 800; letter-spacing: -0.01em; color: #0F0A1E">Rejoindre la salle Pain-Levé</h2>
+</div>
+<div style="flex: 0 1 380px; padding: 20px 24px; border-radius: 20px; background: #FFFFFF; border: 1px solid #E6DCFF; display: flex; flex-direction: column; gap: 4px">
+<p style="margin: 0; font-size: 16px; font-weight: 700; color: #1E0050">Cité des sciences et de l'industrie</p>
+<p style="margin: 0; font-size: 15px; color: #3A3556">30 avenue Corentin-Cariou, 75019 Paris</p>
+<p style="margin: 0; font-size: 15px; color: #3A3556">Métro 7 · Porte de la Villette</p>
+</div>
+</div>
+<ol style="margin: 0; padding: 0; list-style: none; display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px">
+<li style="display: flex; flex-direction: column; gap: 16px; padding: 16px; border-radius: 24px; background: #FFFFFF; border: 1px solid #E6DCFF">
+<img src="./assets/320f27f77baace121aee013cc98c3729.jpg" alt="Panneau indiquant la Bibliothèque au niveau -1" style="width: 100%; height: 240px; object-fit: cover; object-position: center 30%; border-radius: 16px; display: block">
+<div style="display: flex; gap: 14px; align-items: flex-start; padding: 0 8px 8px">
+<span style="flex: 0 0 40px; width: 40px; height: 40px; border-radius: 50%; background: #3C0094; color: #FFFFFF; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 17px">1</span>
+<p style="margin: 0; font-size: 16px; line-height: 1.5; color: #1A1A2E">Depuis l'entrée principale, suivez <strong>« Bibliothèque »</strong>.</p>
+</div>
+</li>
+<li style="display: flex; flex-direction: column; gap: 16px; padding: 16px; border-radius: 24px; background: #FFFFFF; border: 1px solid #E6DCFF">
+<img src="./assets/aab6264af58b2fd010413859fa1a5704.jpg" alt="Escalator descendant vers le niveau -1" style="width: 100%; height: 240px; object-fit: cover; border-radius: 16px; display: block">
+<div style="display: flex; gap: 14px; align-items: flex-start; padding: 0 8px 8px">
+<span style="flex: 0 0 40px; width: 40px; height: 40px; border-radius: 50%; background: #3C0094; color: #FFFFFF; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 17px">2</span>
+<p style="margin: 0; font-size: 16px; line-height: 1.5; color: #1A1A2E">Descendez au <strong>niveau -1</strong>, puis dans la bibliothèque suivez le panneau <strong>« Salle Pain-Levé »</strong>.</p>
+</div>
+</li>
+<li style="display: flex; flex-direction: column; gap: 16px; padding: 16px; border-radius: 24px; background: #FFFFFF; border: 1px solid #E6DCFF">
+<img src="./assets/75e0792e816079c0b8fdb58c8b300594.jpg" alt="Espace café de l'accueil" style="width: 100%; height: 240px; object-fit: cover; border-radius: 16px; display: block">
+<div style="display: flex; gap: 14px; align-items: flex-start; padding: 0 8px 8px">
+<span style="flex: 0 0 40px; width: 40px; height: 40px; border-radius: 50%; background: #3C0094; color: #FFFFFF; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 17px">3</span>
+<p style="margin: 0; font-size: 16px; line-height: 1.5; color: #1A1A2E"><strong>Coffee time !</strong> L'accueil commence à 9h15.</p>
+</div>
+</li>
+</ol>
+<figure style="margin: 0; position: relative; border-radius: 28px; overflow: hidden">
+<img src="./assets/79f0b5f9e9b58dd8b02b23ea0d18e083.jpg" alt="La salle Pain-Levé, rangées de sièges face à l'écran" style="width: 100%; height: 420px; object-fit: cover; display: block">
+<figcaption style="position: absolute; left: 24px; top: 24px; padding: 12px 22px; border-radius: 16px; background: #FFFFFF; color: #3C0094; font-size: 22px; font-weight: 800; transform: rotate(-4deg); box-shadow: 0 10px 24px rgba(0,0,0,0.18)">Vous y êtes !</figcaption>
+</figure>
+</div>
+</section>
+
+<!-- ===== Après la journée ===== -->
+<section id="apres" style="max-width: 1160px; margin: 0 auto; padding: 88px 24px; display: flex; flex-direction: column; gap: 32px">
+<div style="display: flex; flex-direction: column; gap: 12px">
+<p style="margin: 0; font-size: 14px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #3C0094">Après les talks</p>
+<h2 style="margin: 0; font-size: clamp(2rem, 4vw, 3rem); font-weight: 800; letter-spacing: -0.01em; color: #0F0A1E">On prolonge la journée</h2>
+</div>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 20px">
+<div style="display: flex; flex-direction: column; border-radius: 24px; overflow: hidden; background: #DDF6FB">
+<img src="./assets/f7ad437fb5c31790bcf3b518afaa8fa0.jpg" alt="La Géode et la Cité des sciences" style="width: 100%; height: 280px; object-fit: cover; display: block">
+<div style="padding: 24px 28px 28px; display: flex; flex-direction: column; gap: 8px">
+<p style="margin: 0; font-size: 14px; font-weight: 700; color: #1E0050">16h10 – 18h00</p>
+<h3 style="margin: 0; font-size: 22px; font-weight: 800; color: #1E0050">Visite libre de la Cité des sciences</h3>
+<p style="margin: 0; font-size: 16px; line-height: 1.55; color: #3A3556">Avec votre carte culture : 1 carte = 2 entrées.</p>
+</div>
+</div>
+<div style="display: flex; flex-direction: column; border-radius: 24px; overflow: hidden; background: #3C0094; color: #FFFFFF">
+<div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 4px">
+<img src="./assets/df4114945adf1a4e3f69ff239546ac77.jpg" alt="Intérieur du 211, bar et salle" style="width: 100%; height: 280px; object-fit: cover; display: block">
+<img src="./assets/ec5c7f615c8027e903eb2f87d7002e2c.jpg" alt="Terrasse extérieure du 211" style="width: 100%; height: 280px; object-fit: cover; display: block">
+</div>
+<div style="padding: 24px 28px 28px; display: flex; flex-direction: column; gap: 8px">
+<p style="margin: 0; font-size: 14px; font-weight: 700; color: #E4D9FF">À partir de 18h00</p>
+<h3 style="margin: 0; font-size: 22px; font-weight: 800">Afterwork au 211</h3>
+<p style="margin: 0; font-size: 16px; line-height: 1.55; color: #E4D9FF">Un dernier verre ensemble, à deux pas de la Cité.</p>
+<p style="margin: 4px 0 0; font-size: 16px; font-weight: 600; color: #FFFFFF">211 avenue Jean-Jaurès, 75019 Paris</p>
+<a href="https://www.google.com/maps/search/?api=1&amp;query=Le+211%2C+211+avenue+Jean-Jaur%C3%A8s%2C+75019+Paris" target="_blank" rel="noopener" style="align-self: flex-start; display: inline-flex; align-items: center; gap: 8px; min-height: 44px; margin-top: 8px; padding: 0 18px; border-radius: 999px; background: #FFFFFF; color: #3C0094; font-size: 14px; font-weight: 700; text-decoration: none"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"></path><circle cx="12" cy="9.5" r="2.5"></circle></svg>Voir sur Google Maps</a>
+</div>
+</div>
+</div>
+</section>
+
+<!-- ===== Footer ===== -->
+<footer style="background: #1E0050; color: #FFFFFF">
+<div style="max-width: 1160px; margin: 0 auto; padding: 48px 24px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 24px">
+<img src="./assets/2f7bb7bfac71546dd854a2da9181795b.png" alt="pass Culture" style="height: 40px; width: auto; display: block">
+<p style="margin: 0; font-size: 15px; font-weight: 600; color: #E4D9FF">Séminaire Tech x Product · Mercredi 18 novembre 2026 · Cité des sciences et de l'industrie</p>
+</div>
+</footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"heure":{"editor":"enum","options":["réelle","08:30","10:50","11:20","13:00","15:40","16:30","18:30"],"default":"réelle","section":"Aperçu du badge « En cours »"},"$preview":{"width":1440,"height":4600}}'>
+class Component extends DCLogic {
+  componentDidMount() { this._t = setInterval(() => this.forceUpdate(), 30000); }
+  componentWillUnmount() { clearInterval(this._t); }
+  renderVals() {
+    const S = [
+      { id: 's0', a: 555, b: 585, t: 'Accueil · café', w: '' },
+      { id: 's1', a: 585, b: 600, t: 'Lancement de la journée — Trajectoire IA pass Culture', w: 'Thomas & Nicolas' },
+      { id: 's2', a: 600, b: 635, t: "L'IA dans la fabrication des applications : état des lieux", w: 'Vincent Fratarolli · Inside App' },
+      { id: 's3', a: 640, b: 675, t: "Deux ans d'IA, sans filtre : l'humain aux commandes des agents", w: 'Gabriel Rassial & Xavier De Koninck · BeeMyFlex' },
+      { id: 's4', a: 675, b: 690, t: 'Pause · café', w: '' },
+      { id: 's5', a: 690, b: 725, t: "Faire des cadrages de meilleure qualité grâce à l'IA", w: 'Roxane Albert · Theodo' },
+      { id: 's6', a: 730, b: 765, t: 'Doctrine IA pour le développement', w: 'Livia Fries & Luis Arias · Dinum' },
+      { id: 's7', a: 765, b: 850, t: 'Déjeuner', w: 'Salle Pique-nique 2, étage -1' },
+      { id: 's8', a: 855, b: 890, t: "Agentic Software Factory : de l'idéation à la production", w: 'Arthur Micoulet · Standards' },
+      { id: 's9', a: 895, b: 930, t: 'Harness Engineering : pratiques de développement avec les LLMs', w: 'Valentin Shamsnejad · Dinum' },
+      { id: 's10', a: 935, b: 970, t: 'Trajectoire IA Tech & Produit', w: 'Thomas & Nicolas' },
+      { id: 's11', a: 970, b: 1080, t: 'Visite libre de la Cité des sciences', w: '1 carte culture = 2 entrées' },
+      { id: 's12', a: 1080, b: 1440, t: 'Afterwork au 211', w: 'À partir de 18h00' }
+    ];
+    const fmt = (m) => Math.floor(m / 60) + 'h' + String(m % 60).padStart(2, '0');
+    const sim = this.props.heure ?? 'réelle';
+    const now = new Date();
+    let phase, mins = 0, daysLeft = 0;
+    if (sim && sim !== 'réelle') {
+      const p = sim.split(':');
+      phase = 'day'; mins = parseInt(p[0], 10) * 60 + parseInt(p[1], 10);
+    } else {
+      const ev = new Date(2026, 10, 18);
+      const today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+      const diff = Math.round((ev - today) / 86400000);
+      if (diff > 0) { phase = 'before'; daysLeft = diff; }
+      else if (diff < 0) { phase = 'after'; }
+      else { phase = 'day'; mins = now.getHours() * 60 + now.getMinutes(); }
+    }
+    const live = {};
+    S.forEach((s) => { live[s.id] = false; });
+    let banner;
+    if (phase === 'before') {
+      banner = {
+        tag: daysLeft === 1 ? 'Demain' : 'J-' + daysLeft,
+        title: 'Rendez-vous mercredi 18 novembre à 9h15',
+        sub: "Accueil café en salle Pain-Levé, niveau -1 de la Cité des sciences."
+      };
+    } else if (phase === 'after') {
+      banner = { tag: 'Merci', title: "Merci d'avoir participé au séminaire Tech x Product", sub: 'Le programme reste disponible ci-dessous.' };
+    } else {
+      const cur = S.find((s) => mins >= s.a && mins < s.b);
+      const next = S.find((s) => s.a > mins);
+      if (!cur && mins < S[0].a) {
+        banner = { tag: "Aujourd'hui", title: 'Accueil à 9h15', sub: 'Salle Pain-Levé, niveau -1 · pensez à votre carte culture.' };
+      } else if (cur) {
+        live[cur.id] = true;
+        banner = {
+          tag: 'En ce moment',
+          title: cur.t + (cur.w ? ' — ' + cur.w : ''),
+          sub: next ? 'À suivre à ' + fmt(next.a) + ' : ' + next.t : 'Belle soirée à toutes et à tous !'
+        };
+      } else {
+        banner = { tag: 'À suivre', title: next ? next.t : 'Afterwork au 211', sub: next ? 'Reprise à ' + fmt(next.a) : '' };
+      }
+    }
+    return { live };
+  }
+}
+</script>
+</body>
+</html>
