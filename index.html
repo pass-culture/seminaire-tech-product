@@ -16,6 +16,21 @@
 body{margin:0;background:#FFFFFF}
 html{scroll-behavior:smooth}
 a{color:#3C0094}a:hover{color:#1E0050}
+@keyframes pc-fade-up{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:none}}
+@keyframes pc-reveal{from{clip-path:polygon(100% 0,100% 0,100% 100%,100% 100%)}to{clip-path:polygon(25% 0,100% 0,100% 100%,0% 100%)}}
+.pc-cta{--mx:0px;--my:0px;position:relative;overflow:hidden;isolation:isolate;transform:translate3d(var(--mx),var(--my),0);transition:transform 500ms cubic-bezier(.2,.9,.3,1.2),color 450ms ease,border-color 450ms ease}
+.pc-cta::before{content:"";position:absolute;z-index:-1;left:var(--fx,50%);top:var(--fy,50%);width:460px;height:460px;margin:-230px 0 0 -230px;border-radius:50%;background:var(--pc-fill,#1E0050);transform:scale(0);transition:transform 650ms cubic-bezier(.16,1,.3,1);pointer-events:none}
+.pc-cta:hover::before,.pc-cta:focus-visible::before{transform:scale(1)}
+.pc-cta:focus-visible{outline:2px solid #3C0094;outline-offset:3px}
+.pc-cta--solid{--pc-fill:#1E0050}
+.pc-cta--outline{--pc-fill:#3C0094}
+.pc-cta--outline:hover,.pc-cta--outline:focus-visible{color:#FFFFFF !important}
+.pc-cta--light{--pc-fill:#1E0050}
+.pc-cta--light:hover,.pc-cta--light:focus-visible{color:#FFFFFF !important}
+.pc-cta--light:focus-visible{outline-color:#FFFFFF}
+@media (prefers-reduced-motion: reduce){*{animation:none !important}.pc-cta{transform:none !important;transition:none !important}.pc-cta::before{transition:none !important}}
+@media (max-width: 900px){.pc-hero-content{padding:48px 28px 40px 24px !important}.pc-hero-content h1{font-size:2.4rem !important}}
+@media (max-width: 520px){.pc-hero{flex-direction:column !important}.pc-hero-content{padding:40px 20px 32px !important}.pc-hero-media{flex:0 0 280px !important;min-height:280px !important}}
 </style>
 </helmet>
 <div style="font-family: Montserrat, system-ui, sans-serif; color: #1A1A2E; background: #FFFFFF; width: 100%; min-height: 100%">
@@ -34,45 +49,41 @@ a{color:#3C0094}a:hover{color:#1E0050}
 </header>
 
 <!-- ===== Hero ===== -->
-<section id="top" style="max-width: 1160px; margin: 0 auto; padding: 72px 24px 88px; display: flex; flex-wrap: wrap; align-items: center; gap: 56px">
-<div style="flex: 1 1 480px; min-width: 0; display: flex; flex-direction: column; gap: 24px">
-<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 20px 28px">
-<div style="width: 116px; border-radius: 20px; overflow: hidden; background: #FFFFFF; border: 2px solid #3C0094; box-shadow: 6px 6px 0 #A77BFF; transform: rotate(-3deg); display: flex; flex-direction: column; align-items: stretch; text-align: center">
+<section id="top" class="pc-hero" style="position: relative; width: 100%; min-height: 640px; display: flex; flex-direction: row; flex-wrap: nowrap; align-items: stretch; background: #FFFFFF; overflow: hidden">
+<div class="pc-hero-content" style="flex: 3 1 0; min-width: 0; box-sizing: border-box; padding: 64px 48px 56px max(24px, calc((100% - 1112px) / 2)); display: flex; flex-direction: column; justify-content: space-between; gap: 56px">
+<div style="display: flex; flex-direction: column; gap: 28px">
+<div style="width: 116px; border-radius: 20px; overflow: hidden; background: #FFFFFF; border: 2px solid #3C0094; box-shadow: 6px 6px 0 #A77BFF; transform: rotate(-3deg); display: flex; flex-direction: column; align-items: stretch; text-align: center; animation: pc-fade-up 0.5s ease-out 0.2s both">
 <p style="margin: 0; padding: 7px 0; background: #3C0094; color: #FFFFFF; font-size: 12px; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase">Nov. 2026</p>
 <p style="margin: 0; padding-top: 4px; font-size: 54px; line-height: 1; font-weight: 800; color: #1E0050; letter-spacing: -0.03em">18</p>
 <p style="margin: 0; padding: 2px 0 10px; font-size: 13px; font-weight: 700; color: #3C0094">Mercredi</p>
 </div>
-<div style="display: flex; align-items: center; gap: 12px">
-<svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#3C0094" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"></path><circle cx="12" cy="9.5" r="2.5"></circle></svg>
-<div>
-<p style="margin: 0; font-size: 16px; font-weight: 700; color: #1E0050">Cité des sciences et de l'industrie</p>
-<p style="margin: 0; font-size: 14px; font-weight: 500; color: #4B4766">Paris 19e</p>
-</div>
-</div>
-</div>
-<div style="display: flex; flex-direction: column; gap: 10px">
-<h1 style="margin: 0; font-size: clamp(2.6rem, 6vw, 4.6rem); line-height: 1.02; font-weight: 800; letter-spacing: -0.02em; color: #0F0A1E">Séminaire Tech x Product</h1>
+<div style="display: flex; flex-direction: column; gap: 14px; animation: pc-fade-up 0.5s ease-out 0.35s both">
+<h1 style="margin: 0; font-size: clamp(2.6rem, 5.6vw, 4.6rem); line-height: 1.02; font-weight: 800; letter-spacing: -0.02em; color: #0F0A1E">Séminaire<br><span style="color: #3C0094">Tech x Product</span></h1>
 <svg width="160" height="18" viewBox="0 0 160 18" aria-hidden="true" style="display: block"><path d="M3 11 C 18 1, 30 1, 44 9 S 70 17, 84 9 S 110 1, 124 9 S 146 15, 157 7" fill="none" stroke="#F2836B" stroke-width="4" stroke-linecap="round"></path></svg>
 </div>
-<p style="margin: 0; font-size: 20px; line-height: 1.5; font-weight: 500; color: #3C0094; max-width: 34ch">L'IA dans la tech et le produit — retours d'expériences.</p>
-<div style="display: flex; flex-wrap: wrap; gap: 10px">
-<span style="display: inline-flex; align-items: center; gap: 8px; padding: 10px 16px; border-radius: 999px; background: #F1EBFF; font-size: 14px; font-weight: 600; color: #1E0050">9h15 · Accueil café</span>
-<span style="display: inline-flex; align-items: center; gap: 8px; padding: 10px 16px; border-radius: 999px; background: #F1EBFF; font-size: 14px; font-weight: 600; color: #1E0050">Salle Pain-Levé · niveau -1</span>
-<span style="display: inline-flex; align-items: center; gap: 8px; padding: 10px 16px; border-radius: 999px; background: #F1EBFF; font-size: 14px; font-weight: 600; color: #1E0050">18h · Afterwork au 211</span>
-</div>
-<div style="display: flex; flex-wrap: wrap; gap: 12px; padding-top: 8px">
-<a href="#programme" style="display: inline-flex; align-items: center; justify-content: center; min-height: 52px; padding: 0 28px; border-radius: 999px; background: #3C0094; color: #FFFFFF; font-size: 16px; font-weight: 700; text-decoration: none">Voir le programme</a>
-<a href="#acces" style="display: inline-flex; align-items: center; justify-content: center; min-height: 52px; padding: 0 28px; border-radius: 999px; background: #FFFFFF; color: #3C0094; border: 2px solid #3C0094; font-size: 16px; font-weight: 700; text-decoration: none">Comment venir</a>
+<p style="margin: 0; font-size: 20px; line-height: 1.5; font-weight: 500; color: #3A3556; max-width: 34ch; animation: pc-fade-up 0.5s ease-out 0.5s both">L'IA dans la tech et le produit — retours d'expériences.</p>
+<div style="display: flex; flex-wrap: wrap; gap: 12px; animation: pc-fade-up 0.5s ease-out 0.65s both">
+<a class="pc-cta pc-cta--solid" onPointerEnter="{{ctaMove}}" onPointerMove="{{ctaMove}}" onPointerLeave="{{ctaLeave}}" href="#programme" style="display: inline-flex; align-items: center; justify-content: center; min-height: 52px; padding: 0 28px; border-radius: 999px; background: #3C0094; color: #FFFFFF; font-size: 16px; font-weight: 700; text-decoration: none">Voir le programme</a>
+<a class="pc-cta pc-cta--outline" onPointerEnter="{{ctaMove}}" onPointerMove="{{ctaMove}}" onPointerLeave="{{ctaLeave}}" href="#acces" style="display: inline-flex; align-items: center; justify-content: center; min-height: 52px; padding: 0 28px; border-radius: 999px; background: #FFFFFF; color: #3C0094; border: 2px solid #3C0094; font-size: 16px; font-weight: 700; text-decoration: none">Comment venir</a>
 </div>
 </div>
-<div style="flex: 1 1 340px; min-width: 0; display: flex; justify-content: center; padding: 24px 0">
-<div style="position: relative; width: 300px; height: 420px">
-<div style="position: absolute; inset: 0; border-radius: 28px; background: #A77BFF; transform: rotate(6deg) translate(18px, 10px)"></div>
-<div style="position: absolute; inset: 0; border-radius: 28px; background: #EDE4FF; overflow: hidden; transform: rotate(-3deg); box-shadow: 0 24px 60px rgba(60,0,148,0.22)">
-<img src="./assets/f7ad437fb5c31790bcf3b518afaa8fa0.jpg" alt="La Cité des sciences et de l'industrie et la Géode, vues de l'extérieur" style="width: 100%; height: 100%; object-fit: cover; object-position: 66% center; display: block">
+<ul style="margin: 0; padding: 24px 0 0; list-style: none; border-top: 1px solid #ECE6FA; display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 16px 24px; animation: pc-fade-up 0.5s ease-out 0.8s both">
+<li style="display: flex; align-items: center; gap: 10px; font-size: 14px; font-weight: 600; line-height: 1.4; color: #3A3556">
+<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#3C0094" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex: 0 0 20px"><rect x="3" y="4" width="18" height="18" rx="2"></rect><path d="M16 2v4M8 2v4M3 10h18"></path></svg>
+<span>Mercredi 18 novembre 2026</span>
+</li>
+<li style="display: flex; align-items: center; gap: 10px; font-size: 14px; font-weight: 600; line-height: 1.4; color: #3A3556">
+<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#3C0094" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex: 0 0 20px"><circle cx="12" cy="12" r="10"></circle><path d="M12 6v6l4 2"></path></svg>
+<span>9h15 – 18h00 · afterwork dès 18h</span>
+</li>
+<li style="display: flex; align-items: center; gap: 10px; font-size: 14px; font-weight: 600; line-height: 1.4; color: #3A3556">
+<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#3C0094" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex: 0 0 20px"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+<span>Cité des sciences, Paris 19e · salle Pain-Levé</span>
+</li>
+</ul>
 </div>
-<svg width="70" height="40" viewBox="0 0 70 40" aria-hidden="true" style="position: absolute; right: -40px; bottom: 40px"><path d="M4 30 C 18 10, 34 10, 40 22 S 58 32, 66 8" fill="none" stroke="#2CD3A8" stroke-width="4" stroke-linecap="round"></path></svg>
-</div>
+<div class="pc-hero-media" style="flex: 2 1 0; min-width: 0; position: relative; animation: pc-reveal 1.2s cubic-bezier(0.08, 0.82, 0.17, 1) both; clip-path: polygon(25% 0, 100% 0, 100% 100%, 0% 100%); background: #EDE4FF">
+<img src="./assets/f7ad437fb5c31790bcf3b518afaa8fa0.jpg" alt="La Cité des sciences et de l'industrie et la Géode, vues de l'extérieur" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 66% center; display: block">
 </div>
 </section>
 
@@ -81,7 +92,7 @@ a{color:#3C0094}a:hover{color:#1E0050}
 <div style="max-width: 1160px; margin: 0 auto; padding: 0 24px; display: flex; flex-direction: column; gap: 56px">
 <div style="display: flex; flex-direction: column; gap: 12px">
 <p style="margin: 0; font-size: 14px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #3C0094">Programme</p>
-<h2 style="margin: 0; font-size: clamp(2rem, 4vw, 3rem); font-weight: 800; letter-spacing: -0.01em; color: #0F0A1E">Une journée, sept retours d'expériences</h2>
+<h2 style="margin: 0; font-size: clamp(2rem, 4vw, 3rem); font-weight: 800; letter-spacing: -0.01em; color: #0F0A1E">Une journée, 6 retours d'expériences</h2>
 <svg width="120" height="16" viewBox="0 0 120 16" aria-hidden="true"><path d="M3 10 C 14 2, 24 2, 34 8 S 54 14, 64 8 S 84 2, 94 8 S 110 13, 117 6" fill="none" stroke="#F2836B" stroke-width="4" stroke-linecap="round"></path></svg>
 </div>
 
@@ -104,13 +115,13 @@ a{color:#3C0094}a:hover{color:#1E0050}
 <p style="margin: 0; flex: 0 0 132px; font-size: 16px; font-weight: 800; color: #1E0050">9h45 – 10h00</p>
 <div style="flex: 1 1 420px; min-width: 0; display: flex; flex-direction: column; gap: 14px">
 <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px">
-<span style="display: inline-flex; padding: 4px 10px; border-radius: 999px; background: #FFFFFF; font-size: 12px; font-weight: 700; color: #3C0094">pass Culture</span>
+<span style="display: inline-flex; align-items: center; justify-content: center; height: 52px; padding: 0 16px; border-radius: 14px; background: #FFFFFF; border: 1px solid #E6DCFF"><img src="./assets/8961f5de2e3c66cbd6004b0c0499b500.png" alt="pass Culture" style="height: 30px; width: auto; display: block"></span>
 <sc-if value="{{live.s1}}" hint-placeholder-val="{{ false }}"><span style="display: inline-flex; padding: 4px 10px; border-radius: 999px; background: #3C0094; color: #FFFFFF; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em">En cours</span></sc-if>
 </div>
 <h4 style="margin: 0; font-size: 21px; line-height: 1.3; font-weight: 700; color: #1E0050">Lancement de la journée — Trajectoire IA pass Culture</h4>
 <div style="display: flex; flex-wrap: wrap; gap: 16px 28px">
-<div style="display: flex; align-items: center; gap: 12px"><img src="./assets/242ab32c937304adbc7ac390c91aa10a.jpg" alt="Thomas" style="width: 56px; height: 56px; border-radius: 50%; object-fit: cover; border: 3px solid #CDBBFF; display: block"><div><p style="margin: 0; font-size: 15px; font-weight: 700; color: #1A1A2E">Thomas</p><p style="margin: 0; font-size: 13px; color: #4B4766">pass Culture</p></div></div>
-<div style="display: flex; align-items: center; gap: 12px"><img src="./assets/72676e38854f2a5c6e820412d0fc70ee.jpg" alt="Nicolas" style="width: 56px; height: 56px; border-radius: 50%; object-fit: cover; border: 3px solid #CDBBFF; display: block"><div><p style="margin: 0; font-size: 15px; font-weight: 700; color: #1A1A2E">Nicolas</p><p style="margin: 0; font-size: 13px; color: #4B4766">pass Culture</p></div></div>
+<div style="display: flex; align-items: center; gap: 12px"><img src="./assets/242ab32c937304adbc7ac390c91aa10a.jpg" alt="Thomas" style="width: 56px; height: 56px; border-radius: 50%; object-fit: cover; border: 3px solid #CDBBFF; display: block"><div><p style="margin: 0; font-size: 15px; font-weight: 700; color: #1A1A2E">Thomas Dugué</p><p style="margin: 0; font-size: 13px; color: #4B4766">CPO</p></div></div>
+<div style="display: flex; align-items: center; gap: 12px"><img src="./assets/72676e38854f2a5c6e820412d0fc70ee.jpg" alt="Nicolas" style="width: 56px; height: 56px; border-radius: 50%; object-fit: cover; border: 3px solid #CDBBFF; display: block"><div><p style="margin: 0; font-size: 15px; font-weight: 700; color: #1A1A2E">Nicolas Durand</p><p style="margin: 0; font-size: 13px; color: #4B4766">CTO</p></div></div>
 </div>
 </div>
 </article>
@@ -120,7 +131,7 @@ a{color:#3C0094}a:hover{color:#1E0050}
 <p style="margin: 0; flex: 0 0 132px; font-size: 16px; font-weight: 800; color: #1E0050">10h00 – 10h35</p>
 <div style="flex: 1 1 420px; min-width: 0; display: flex; flex-direction: column; gap: 14px">
 <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px">
-<span style="display: inline-flex; padding: 4px 10px; border-radius: 999px; background: #F1EBFF; font-size: 12px; font-weight: 700; color: #3C0094">Inside App</span>
+<span style="display: inline-flex; align-items: center; justify-content: center; height: 52px; padding: 0 16px; border-radius: 14px; background: #FFFFFF; border: 1px solid #E6DCFF"><img src="./assets/84ae8a3b90a9aeaae119580328b5b4dd.png" alt="Inside App" style="height: 22px; width: auto; display: block"></span>
 <sc-if value="{{live.s2}}" hint-placeholder-val="{{ false }}"><span style="display: inline-flex; padding: 4px 10px; border-radius: 999px; background: #3C0094; color: #FFFFFF; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em">En cours</span></sc-if>
 </div>
 <h4 style="margin: 0; font-size: 21px; line-height: 1.3; font-weight: 700; color: #1E0050">L'IA dans la fabrication des applications : état des lieux</h4>
@@ -135,7 +146,7 @@ a{color:#3C0094}a:hover{color:#1E0050}
 <p style="margin: 0; flex: 0 0 132px; font-size: 16px; font-weight: 800; color: #1E0050">10h40 – 11h15</p>
 <div style="flex: 1 1 420px; min-width: 0; display: flex; flex-direction: column; gap: 14px">
 <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px">
-<span style="display: inline-flex; padding: 4px 10px; border-radius: 999px; background: #F1EBFF; font-size: 12px; font-weight: 700; color: #3C0094">BeeMyFlex</span>
+<span style="display: inline-flex; align-items: center; justify-content: center; height: 52px; padding: 0 16px; border-radius: 14px; background: #FFFFFF; border: 1px solid #E6DCFF"><img src="./assets/091a8349216ebe0019003821b4d3f9a5.svg" alt="BeeMyFlex" style="height: 30px; width: auto; display: block"></span>
 <sc-if value="{{live.s3}}" hint-placeholder-val="{{ false }}"><span style="display: inline-flex; padding: 4px 10px; border-radius: 999px; background: #3C0094; color: #FFFFFF; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em">En cours</span></sc-if>
 </div>
 <h4 style="margin: 0; font-size: 21px; line-height: 1.3; font-weight: 700; color: #1E0050">Deux ans d'IA, sans filtre : l'humain aux commandes des agents</h4>
@@ -157,7 +168,7 @@ a{color:#3C0094}a:hover{color:#1E0050}
 <p style="margin: 0; flex: 0 0 132px; font-size: 16px; font-weight: 800; color: #1E0050">11h30 – 12h05</p>
 <div style="flex: 1 1 420px; min-width: 0; display: flex; flex-direction: column; gap: 14px">
 <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px">
-<span style="display: inline-flex; padding: 4px 10px; border-radius: 999px; background: #F1EBFF; font-size: 12px; font-weight: 700; color: #3C0094">Theodo</span>
+<span style="display: inline-flex; align-items: center; justify-content: center; height: 52px; padding: 0 16px; border-radius: 14px; background: #FFFFFF; border: 1px solid #E6DCFF"><img src="./assets/9d9c18a0d483abc93b4981cbfee5ae5d.png" alt="Theodo" style="height: 22px; width: auto; display: block"></span>
 <sc-if value="{{live.s5}}" hint-placeholder-val="{{ false }}"><span style="display: inline-flex; padding: 4px 10px; border-radius: 999px; background: #3C0094; color: #FFFFFF; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em">En cours</span></sc-if>
 </div>
 <h4 style="margin: 0; font-size: 21px; line-height: 1.3; font-weight: 700; color: #1E0050">Faire des cadrages de meilleure qualité grâce à l'IA</h4>
@@ -172,12 +183,12 @@ a{color:#3C0094}a:hover{color:#1E0050}
 <p style="margin: 0; flex: 0 0 132px; font-size: 16px; font-weight: 800; color: #1E0050">12h10 – 12h45</p>
 <div style="flex: 1 1 420px; min-width: 0; display: flex; flex-direction: column; gap: 14px">
 <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px">
-<span style="display: inline-flex; padding: 4px 10px; border-radius: 999px; background: #F1EBFF; font-size: 12px; font-weight: 700; color: #3C0094">Dinum · IA dans l'État</span>
+<span style="display: inline-flex; align-items: center; justify-content: center; height: 52px; padding: 0 16px; border-radius: 14px; background: #FFFFFF; border: 1px solid #E6DCFF"><img src="./assets/a78379cdc5d02a6372dd5da71650c862.png" alt="Direction interministérielle du numérique (DINUM)" style="height: 40px; width: auto; display: block"></span>
 <sc-if value="{{live.s6}}" hint-placeholder-val="{{ false }}"><span style="display: inline-flex; padding: 4px 10px; border-radius: 999px; background: #3C0094; color: #FFFFFF; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em">En cours</span></sc-if>
 </div>
 <h4 style="margin: 0; font-size: 21px; line-height: 1.3; font-weight: 700; color: #1E0050">Doctrine IA pour le développement</h4>
 <div style="display: flex; flex-wrap: wrap; gap: 16px 28px">
-<div style="display: flex; align-items: center; gap: 12px"><img src="./assets/267b786158c33ba670f01fd3fcc923b2.jpg" alt="Livia Fries" style="width: 56px; height: 56px; border-radius: 50%; object-fit: cover; border: 3px solid #CDBBFF; display: block"><div><p style="margin: 0; font-size: 15px; font-weight: 700; color: #1A1A2E">Livia Fries</p><p style="margin: 0; font-size: 13px; color: #4B4766">Solutions Architect</p></div></div>
+<div style="display: flex; align-items: center; gap: 12px"><img src="./assets/267b786158c33ba670f01fd3fcc923b2.jpg" alt="Livia Fries" style="width: 56px; height: 56px; border-radius: 50%; object-fit: cover; border: 3px solid #CDBBFF; display: block"><div><p style="margin: 0; font-size: 15px; font-weight: 700; color: #1A1A2E">Livia Fries</p><p style="margin: 0; font-size: 13px; color: #4B4766">Solutions Architect, IA dans l'État</p></div></div>
 <div style="display: flex; align-items: center; gap: 12px"><img src="./assets/8e5870dca7e626d4c90ea133ab01e994.jpg" alt="Luis Arias" style="width: 56px; height: 56px; border-radius: 50%; object-fit: cover; border: 3px solid #CDBBFF; display: block"><div><p style="margin: 0; font-size: 15px; font-weight: 700; color: #1A1A2E">Luis Arias</p><p style="margin: 0; font-size: 13px; color: #4B4766">CTO ALLiaNCE</p></div></div>
 </div>
 </div>
@@ -206,7 +217,7 @@ a{color:#3C0094}a:hover{color:#1E0050}
 <p style="margin: 0; flex: 0 0 132px; font-size: 16px; font-weight: 800; color: #1E0050">14h15 – 14h50</p>
 <div style="flex: 1 1 420px; min-width: 0; display: flex; flex-direction: column; gap: 14px">
 <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px">
-<span style="display: inline-flex; padding: 4px 10px; border-radius: 999px; background: #F1EBFF; font-size: 12px; font-weight: 700; color: #3C0094">Standards</span>
+<span style="display: inline-flex; align-items: center; justify-content: center; height: 52px; padding: 0 16px; border-radius: 14px; background: #FFFFFF; border: 1px solid #E6DCFF; font-size: 17px; font-weight: 800; letter-spacing: -0.01em; color: #1A1A2E">Standards</span>
 <sc-if value="{{live.s8}}" hint-placeholder-val="{{ false }}"><span style="display: inline-flex; padding: 4px 10px; border-radius: 999px; background: #3C0094; color: #FFFFFF; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em">En cours</span></sc-if>
 </div>
 <h4 style="margin: 0; font-size: 21px; line-height: 1.3; font-weight: 700; color: #1E0050">Agentic Software Factory : de l'idéation à la production</h4>
@@ -221,12 +232,12 @@ a{color:#3C0094}a:hover{color:#1E0050}
 <p style="margin: 0; flex: 0 0 132px; font-size: 16px; font-weight: 800; color: #1E0050">14h55 – 15h30</p>
 <div style="flex: 1 1 420px; min-width: 0; display: flex; flex-direction: column; gap: 14px">
 <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px">
-<span style="display: inline-flex; padding: 4px 10px; border-radius: 999px; background: #F1EBFF; font-size: 12px; font-weight: 700; color: #3C0094">Dinum · Data.gouv</span>
+<span style="display: inline-flex; align-items: center; justify-content: center; height: 52px; padding: 0 16px; border-radius: 14px; background: #FFFFFF; border: 1px solid #E6DCFF"><img src="./assets/a78379cdc5d02a6372dd5da71650c862.png" alt="Direction interministérielle du numérique (DINUM)" style="height: 40px; width: auto; display: block"></span>
 <sc-if value="{{live.s9}}" hint-placeholder-val="{{ false }}"><span style="display: inline-flex; padding: 4px 10px; border-radius: 999px; background: #3C0094; color: #FFFFFF; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em">En cours</span></sc-if>
 </div>
 <h4 style="margin: 0; font-size: 21px; line-height: 1.3; font-weight: 700; color: #1E0050">Harness Engineering : pratiques de développement avec les LLMs</h4>
 <div style="display: flex; flex-wrap: wrap; gap: 16px 28px">
-<div style="display: flex; align-items: center; gap: 12px"><img src="./assets/e20c3db7dec1ae92fce2b580cd2ca81a.jpg" alt="Valentin Shamsnejad" style="width: 56px; height: 56px; border-radius: 50%; object-fit: cover; border: 3px solid #CDBBFF; display: block"><div><p style="margin: 0; font-size: 15px; font-weight: 700; color: #1A1A2E">Valentin Shamsnejad</p><p style="margin: 0; font-size: 13px; color: #4B4766">Ingénieur produit</p></div></div>
+<div style="display: flex; align-items: center; gap: 12px"><img src="./assets/e20c3db7dec1ae92fce2b580cd2ca81a.jpg" alt="Valentin Shamsnejad" style="width: 56px; height: 56px; border-radius: 50%; object-fit: cover; border: 3px solid #CDBBFF; display: block"><div><p style="margin: 0; font-size: 15px; font-weight: 700; color: #1A1A2E">Valentin Shamsnejad</p><p style="margin: 0; font-size: 13px; color: #4B4766">Ingénieur produit, Data.gouv</p></div></div>
 </div>
 </div>
 </article>
@@ -236,13 +247,13 @@ a{color:#3C0094}a:hover{color:#1E0050}
 <p style="margin: 0; flex: 0 0 132px; font-size: 16px; font-weight: 800; color: #1E0050">15h35 – 16h10</p>
 <div style="flex: 1 1 420px; min-width: 0; display: flex; flex-direction: column; gap: 14px">
 <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px">
-<span style="display: inline-flex; padding: 4px 10px; border-radius: 999px; background: #FFFFFF; font-size: 12px; font-weight: 700; color: #3C0094">pass Culture</span>
+<span style="display: inline-flex; align-items: center; justify-content: center; height: 52px; padding: 0 16px; border-radius: 14px; background: #FFFFFF; border: 1px solid #E6DCFF"><img src="./assets/8961f5de2e3c66cbd6004b0c0499b500.png" alt="pass Culture" style="height: 30px; width: auto; display: block"></span>
 <sc-if value="{{live.s10}}" hint-placeholder-val="{{ false }}"><span style="display: inline-flex; padding: 4px 10px; border-radius: 999px; background: #3C0094; color: #FFFFFF; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em">En cours</span></sc-if>
 </div>
 <h4 style="margin: 0; font-size: 21px; line-height: 1.3; font-weight: 700; color: #1E0050">Trajectoire IA Tech &amp; Produit</h4>
 <div style="display: flex; flex-wrap: wrap; gap: 16px 28px">
-<div style="display: flex; align-items: center; gap: 12px"><img src="./assets/242ab32c937304adbc7ac390c91aa10a.jpg" alt="Thomas" style="width: 56px; height: 56px; border-radius: 50%; object-fit: cover; border: 3px solid #CDBBFF; display: block"><div><p style="margin: 0; font-size: 15px; font-weight: 700; color: #1A1A2E">Thomas</p><p style="margin: 0; font-size: 13px; color: #4B4766">pass Culture</p></div></div>
-<div style="display: flex; align-items: center; gap: 12px"><img src="./assets/72676e38854f2a5c6e820412d0fc70ee.jpg" alt="Nicolas" style="width: 56px; height: 56px; border-radius: 50%; object-fit: cover; border: 3px solid #CDBBFF; display: block"><div><p style="margin: 0; font-size: 15px; font-weight: 700; color: #1A1A2E">Nicolas</p><p style="margin: 0; font-size: 13px; color: #4B4766">pass Culture</p></div></div>
+<div style="display: flex; align-items: center; gap: 12px"><img src="./assets/242ab32c937304adbc7ac390c91aa10a.jpg" alt="Thomas" style="width: 56px; height: 56px; border-radius: 50%; object-fit: cover; border: 3px solid #CDBBFF; display: block"><div><p style="margin: 0; font-size: 15px; font-weight: 700; color: #1A1A2E">Thomas Dugué</p><p style="margin: 0; font-size: 13px; color: #4B4766">CPO</p></div></div>
+<div style="display: flex; align-items: center; gap: 12px"><img src="./assets/72676e38854f2a5c6e820412d0fc70ee.jpg" alt="Nicolas" style="width: 56px; height: 56px; border-radius: 50%; object-fit: cover; border: 3px solid #CDBBFF; display: block"><div><p style="margin: 0; font-size: 15px; font-weight: 700; color: #1A1A2E">Nicolas Durand</p><p style="margin: 0; font-size: 13px; color: #4B4766">CTO</p></div></div>
 </div>
 </div>
 </article>
@@ -265,7 +276,7 @@ a{color:#3C0094}a:hover{color:#1E0050}
 <p style="margin: 0; font-size: 17px; font-weight: 700">Afterwork au 211</p>
 </div>
 <sc-if value="{{live.s12}}" hint-placeholder-val="{{ false }}"><span style="display: inline-flex; align-items: center; padding: 6px 12px; border-radius: 999px; background: #FFFFFF; color: #3C0094; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em">En cours</span></sc-if>
-<a href="https://www.google.com/maps/search/?api=1&amp;query=Le+211%2C+211+avenue+Jean-Jaur%C3%A8s%2C+75019+Paris" target="_blank" rel="noopener" style="display: inline-flex; align-items: center; gap: 8px; min-height: 44px; padding: 0 18px; border-radius: 999px; background: #FFFFFF; color: #3C0094; font-size: 14px; font-weight: 700; text-decoration: none"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"></path><circle cx="12" cy="9.5" r="2.5"></circle></svg>Voir sur Google Maps</a>
+<a class="pc-cta pc-cta--light" onPointerEnter="{{ctaMove}}" onPointerMove="{{ctaMove}}" onPointerLeave="{{ctaLeave}}" href="https://www.google.com/maps/search/?api=1&amp;query=Le+211%2C+211+avenue+Jean-Jaur%C3%A8s%2C+75019+Paris" target="_blank" rel="noopener" style="display: inline-flex; align-items: center; gap: 8px; min-height: 44px; padding: 0 18px; border-radius: 999px; background: #FFFFFF; color: #3C0094; font-size: 14px; font-weight: 700; text-decoration: none"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"></path><circle cx="12" cy="9.5" r="2.5"></circle></svg>Voir sur Google Maps</a>
 </div>
 </div>
 </section>
@@ -349,10 +360,14 @@ a{color:#3C0094}a:hover{color:#1E0050}
 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 20px">
 <div style="display: flex; flex-direction: column; border-radius: 24px; overflow: hidden; background: #DDF6FB">
 <img src="./assets/f7ad437fb5c31790bcf3b518afaa8fa0.jpg" alt="La Géode et la Cité des sciences" style="width: 100%; height: 280px; object-fit: cover; display: block">
-<div style="padding: 24px 28px 28px; display: flex; flex-direction: column; gap: 8px">
+<div style="flex: 1; padding: 24px 28px 28px; display: flex; flex-direction: column; gap: 8px">
 <p style="margin: 0; font-size: 14px; font-weight: 700; color: #1E0050">16h10 – 18h00</p>
 <h3 style="margin: 0; font-size: 22px; font-weight: 800; color: #1E0050">Visite libre de la Cité des sciences</h3>
-<p style="margin: 0; font-size: 16px; line-height: 1.55; color: #3A3556">Avec votre carte culture : 1 carte = 2 entrées.</p>
+<p style="margin: 0; font-size: 16px; line-height: 1.55; color: #3A3556; min-height: 3.1em">Avec votre carte culture : 1 carte = 2 entrées.</p>
+<div style="margin-top: auto; display: flex; flex-direction: column; gap: 12px">
+<p style="margin: 0; font-size: 16px; font-weight: 600; color: #1E0050">30 avenue Corentin-Cariou, 75019 Paris</p>
+<a class="pc-cta pc-cta--solid" onPointerEnter="{{ctaMove}}" onPointerMove="{{ctaMove}}" onPointerLeave="{{ctaLeave}}" href="https://www.google.com/maps/search/?api=1&amp;query=Cit%C3%A9+des+sciences+et+de+l%27industrie%2C+30+avenue+Corentin-Cariou%2C+75019+Paris" target="_blank" rel="noopener" style="align-self: flex-start; display: inline-flex; align-items: center; gap: 8px; min-height: 44px; padding: 0 18px; border-radius: 999px; background: #3C0094; color: #FFFFFF; font-size: 14px; font-weight: 700; text-decoration: none"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"></path><circle cx="12" cy="9.5" r="2.5"></circle></svg>Voir sur Google Maps</a>
+</div>
 </div>
 </div>
 <div style="display: flex; flex-direction: column; border-radius: 24px; overflow: hidden; background: #3C0094; color: #FFFFFF">
@@ -360,12 +375,14 @@ a{color:#3C0094}a:hover{color:#1E0050}
 <img src="./assets/df4114945adf1a4e3f69ff239546ac77.jpg" alt="Intérieur du 211, bar et salle" style="width: 100%; height: 280px; object-fit: cover; display: block">
 <img src="./assets/ec5c7f615c8027e903eb2f87d7002e2c.jpg" alt="Terrasse extérieure du 211" style="width: 100%; height: 280px; object-fit: cover; display: block">
 </div>
-<div style="padding: 24px 28px 28px; display: flex; flex-direction: column; gap: 8px">
+<div style="flex: 1; padding: 24px 28px 28px; display: flex; flex-direction: column; gap: 8px">
 <p style="margin: 0; font-size: 14px; font-weight: 700; color: #E4D9FF">À partir de 18h00</p>
 <h3 style="margin: 0; font-size: 22px; font-weight: 800">Afterwork au 211</h3>
-<p style="margin: 0; font-size: 16px; line-height: 1.55; color: #E4D9FF">Un dernier verre ensemble, à deux pas de la Cité.</p>
-<p style="margin: 4px 0 0; font-size: 16px; font-weight: 600; color: #FFFFFF">211 avenue Jean-Jaurès, 75019 Paris</p>
-<a href="https://www.google.com/maps/search/?api=1&amp;query=Le+211%2C+211+avenue+Jean-Jaur%C3%A8s%2C+75019+Paris" target="_blank" rel="noopener" style="align-self: flex-start; display: inline-flex; align-items: center; gap: 8px; min-height: 44px; margin-top: 8px; padding: 0 18px; border-radius: 999px; background: #FFFFFF; color: #3C0094; font-size: 14px; font-weight: 700; text-decoration: none"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"></path><circle cx="12" cy="9.5" r="2.5"></circle></svg>Voir sur Google Maps</a>
+<p style="margin: 0; font-size: 16px; line-height: 1.55; color: #E4D9FF; min-height: 3.1em">Un dernier verre ensemble, à deux pas de la Cité.</p>
+<div style="margin-top: auto; display: flex; flex-direction: column; gap: 12px">
+<p style="margin: 0; font-size: 16px; font-weight: 600; color: #FFFFFF">211 avenue Jean-Jaurès, 75019 Paris</p>
+<a class="pc-cta pc-cta--light" onPointerEnter="{{ctaMove}}" onPointerMove="{{ctaMove}}" onPointerLeave="{{ctaLeave}}" href="https://www.google.com/maps/search/?api=1&amp;query=Le+211%2C+211+avenue+Jean-Jaur%C3%A8s%2C+75019+Paris" target="_blank" rel="noopener" style="align-self: flex-start; display: inline-flex; align-items: center; gap: 8px; min-height: 44px; padding: 0 18px; border-radius: 999px; background: #FFFFFF; color: #3C0094; font-size: 14px; font-weight: 700; text-decoration: none"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"></path><circle cx="12" cy="9.5" r="2.5"></circle></svg>Voir sur Google Maps</a>
+</div>
 </div>
 </div>
 </div>
@@ -442,7 +459,26 @@ class Component extends DCLogic {
         banner = { tag: 'À suivre', title: next ? next.t : 'Afterwork au 211', sub: next ? 'Reprise à ' + fmt(next.a) : '' };
       }
     }
-    return { live };
+    const ctaMove = (e) => {
+      const el = e.currentTarget;
+      if (!el || !el.getBoundingClientRect) return;
+      const r = el.getBoundingClientRect();
+      const fx = e.clientX - r.left;
+      const fy = e.clientY - r.top;
+      el.style.setProperty('--fx', fx + 'px');
+      el.style.setProperty('--fy', fy + 'px');
+      const reduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if (reduced) return;
+      el.style.setProperty('--mx', ((fx / r.width - 0.5) * 10).toFixed(2) + 'px');
+      el.style.setProperty('--my', ((fy / r.height - 0.5) * 8).toFixed(2) + 'px');
+    };
+    const ctaLeave = (e) => {
+      const el = e.currentTarget;
+      if (!el || !el.style) return;
+      el.style.setProperty('--mx', '0px');
+      el.style.setProperty('--my', '0px');
+    };
+    return { live, ctaMove, ctaLeave };
   }
 }
 </script>
