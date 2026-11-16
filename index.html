@@ -14,9 +14,10 @@
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;0,800;1,700&amp;display=swap" rel="stylesheet">
 <style>
 body{margin:0;background:#FFFFFF}
-html{scroll-behavior:smooth}
+html{scroll-behavior:smooth;scroll-padding-top:84px}
 a{color:#3C0094}a:hover{color:#1E0050}
 @keyframes pc-fade-up{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:none}}
+@keyframes pc-fade-in{from{opacity:0}to{opacity:1}}
 @keyframes pc-reveal{from{clip-path:polygon(100% 0,100% 0,100% 100%,100% 100%)}to{clip-path:polygon(25% 0,100% 0,100% 100%,0% 100%)}}
 .pc-cta{--mx:0px;--my:0px;position:relative;overflow:hidden;isolation:isolate;transform:translate3d(var(--mx),var(--my),0);transition:transform 500ms cubic-bezier(.2,.9,.3,1.2),color 450ms ease,border-color 450ms ease}
 .pc-cta::before{content:"";position:absolute;z-index:-1;left:var(--fx,50%);top:var(--fy,50%);width:460px;height:460px;margin:-230px 0 0 -230px;border-radius:50%;background:var(--pc-fill,#1E0050);transform:scale(0);transition:transform 650ms cubic-bezier(.16,1,.3,1);pointer-events:none}
@@ -30,7 +31,53 @@ a{color:#3C0094}a:hover{color:#1E0050}
 .pc-cta--light:focus-visible{outline-color:#FFFFFF}
 @media (prefers-reduced-motion: reduce){*{animation:none !important}.pc-cta{transform:none !important;transition:none !important}.pc-cta::before{transition:none !important}}
 @media (max-width: 900px){.pc-hero-content{padding:48px 28px 40px 24px !important}.pc-hero-content h1{font-size:2.4rem !important}}
-@media (max-width: 520px){.pc-hero{flex-direction:column !important}.pc-hero-content{padding:40px 20px 32px !important}.pc-hero-media{flex:0 0 280px !important;min-height:280px !important}}
+@media (max-width: 640px){
+html{scroll-padding-top:104px}
+.pc-hero{flex-direction:column !important;min-height:0 !important}
+.pc-hero-content{padding:36px 16px 28px !important;gap:32px !important}
+.pc-hero-content h1{font-size:2.3rem !important}
+.pc-hero-content p{font-size:17px !important}
+.pc-hero-content .pc-cta{flex:1 1 100%}
+.pc-hero-media{position:absolute !important;inset:0;flex:none !important;min-height:0 !important;clip-path:none !important;animation:pc-fade-in .9s ease both !important;z-index:0}
+.pc-hero-media img{object-position:62% center !important}
+.pc-hero-media::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(30,0,80,.80) 0%,rgba(30,0,80,.88) 55%,rgba(30,0,80,.94) 100%)}
+.pc-hero-content{position:relative;z-index:1;padding:44px 16px 32px !important}
+.pc-hero-content h1{color:#FFFFFF !important}
+.pc-hero-content h1 span{color:#CDBBFF !important}
+.pc-hero-content > div:first-child > p{color:#F1EBFF !important}
+.pc-hero-content ul{border-top-color:rgba(255,255,255,.22) !important}
+.pc-hero-content li{color:#F1EBFF !important}
+.pc-hero-content li svg{stroke:#CDBBFF}
+.pc-hero-content .pc-cta--solid{background:#FFFFFF !important;color:#3C0094 !important;--pc-fill:#CDBBFF}
+.pc-hero-content .pc-cta--outline{background:transparent !important;color:#FFFFFF !important;border-color:#FFFFFF !important;--pc-fill:rgba(255,255,255,.16)}
+.pc-hero-content .pc-cta:focus-visible{outline-color:#FFFFFF}
+header > div{padding:8px 16px !important;row-gap:4px !important}
+header > div > a img{height:28px !important}
+header nav{flex:1 1 100%;flex-wrap:nowrap !important;overflow-x:auto;margin:0 -16px !important;padding:0 10px !important;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+header nav::-webkit-scrollbar{display:none}
+header nav a{white-space:nowrap;padding:0 10px !important;font-size:13px !important}
+#programme,#acces{padding:56px 0 !important}
+#programme > div,#acces > div{padding:0 16px !important;gap:40px !important}
+#avant,#apres{padding:56px 16px !important;gap:24px !important}
+#programme h3{font-size:22px !important}
+#programme article{padding:18px !important;gap:12px !important}
+#programme article > p:first-child{flex-basis:100% !important;font-size:15px !important}
+#programme article > div{flex-basis:100% !important}
+#programme article h4{font-size:18px !important}
+#programme article span[style*="height: 52px"]{height:44px !important;padding:0 12px !important}
+#programme div[style*="border-radius: 18px"]{padding:14px 18px !important}
+#programme div[style*="border-radius: 18px"] > p:first-child{flex-basis:100% !important;font-size:15px !important}
+#programme div[style*="border-radius: 18px"] > div{flex-basis:100% !important}
+#avant > div:last-child > div{padding:20px !important;gap:20px !important}
+#avant h3,#apres h3{font-size:20px !important}
+#acces ol img{height:200px !important}
+#acces figure img{height:240px !important}
+#acces figcaption{font-size:17px !important;left:16px !important;top:16px !important}
+#apres img{height:200px !important}
+#apres > div:last-child > div > div:last-child{padding:20px !important}
+footer > div{padding:32px 16px !important;gap:16px !important}
+footer p{font-size:13px !important;line-height:1.5}
+}
 </style>
 </helmet>
 <div style="font-family: Montserrat, system-ui, sans-serif; color: #1A1A2E; background: #FFFFFF; width: 100%; min-height: 100%">
@@ -67,7 +114,7 @@ a{color:#3C0094}a:hover{color:#1E0050}
 <a class="pc-cta pc-cta--outline" onPointerEnter="{{ctaMove}}" onPointerMove="{{ctaMove}}" onPointerLeave="{{ctaLeave}}" href="#acces" style="display: inline-flex; align-items: center; justify-content: center; min-height: 52px; padding: 0 28px; border-radius: 999px; background: #FFFFFF; color: #3C0094; border: 2px solid #3C0094; font-size: 16px; font-weight: 700; text-decoration: none">Comment venir</a>
 </div>
 </div>
-<ul style="margin: 0; padding: 24px 0 0; list-style: none; border-top: 1px solid #ECE6FA; display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 16px 24px; animation: pc-fade-up 0.5s ease-out 0.8s both">
+<ul style="margin: 0; padding: 24px 0 0; list-style: none; border-top: 1px solid #ECE6FA; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(190px, 100%), 1fr)); gap: 16px 24px; animation: pc-fade-up 0.5s ease-out 0.8s both">
 <li style="display: flex; align-items: center; gap: 10px; font-size: 14px; font-weight: 600; line-height: 1.4; color: #3A3556">
 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#3C0094" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex: 0 0 20px"><rect x="3" y="4" width="18" height="18" rx="2"></rect><path d="M16 2v4M8 2v4M3 10h18"></path></svg>
 <span>Mercredi 18 novembre 2026</span>
@@ -285,9 +332,9 @@ a{color:#3C0094}a:hover{color:#1E0050}
 <section id="avant" style="max-width: 1160px; margin: 0 auto; padding: 88px 24px; display: flex; flex-direction: column; gap: 32px">
 <div style="display: flex; flex-direction: column; gap: 12px">
 <p style="margin: 0; font-size: 14px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #3C0094">Avant de venir</p>
-<h2 style="margin: 0; font-size: clamp(2rem, 4vw, 3rem); font-weight: 800; letter-spacing: -0.01em; color: #0F0A1E">Deux choses à savoir</h2>
+<h2 style="margin: 0; font-size: clamp(2rem, 4vw, 3rem); font-weight: 800; letter-spacing: -0.01em; color: #0F0A1E">Trois choses à savoir</h2>
 </div>
-<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px">
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr)); gap: 20px">
 <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 24px; padding: 28px; border-radius: 24px; background: #F1EBFF">
 <img src="./assets/79fb16ff8c9a8e6eb28f844320bc905c.jpg" alt="Carte culture" style="width: 168px; height: 112px; object-fit: cover; border-radius: 12px; transform: rotate(-4deg); box-shadow: 0 10px 24px rgba(60,0,148,0.18); display: block">
 <div style="flex: 1 1 220px; min-width: 0; display: flex; flex-direction: column; gap: 8px">
@@ -302,6 +349,15 @@ a{color:#3C0094}a:hover{color:#1E0050}
 <div style="flex: 1 1 220px; min-width: 0; display: flex; flex-direction: column; gap: 8px">
 <h3 style="margin: 0; font-size: 22px; font-weight: 800; color: #1E0050">Laissez votre ordinateur</h3>
 <p style="margin: 0; font-size: 16px; line-height: 1.55; color: #3A3556">Vos machines ne sont pas nécessaires : la journée est faite de talks et d'échanges.</p>
+</div>
+</div>
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 24px; padding: 28px; border-radius: 24px; background: #F1EBFF">
+<div style="width: 168px; height: 112px; border-radius: 12px; background: #FFFFFF; transform: rotate(-4deg); box-shadow: 0 10px 24px rgba(60,0,148,0.18); display: flex; align-items: center; justify-content: center">
+<svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="#3C0094" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="17" rx="2"></rect><path d="M16 2v4M8 2v4M3 9h18"></path><path d="M8.5 15l2.5 2.5 4.5-5"></path></svg>
+</div>
+<div style="flex: 1 1 220px; min-width: 0; display: flex; flex-direction: column; gap: 8px">
+<h3 style="margin: 0; font-size: 22px; font-weight: 800; color: #1E0050">Munissez-vous de votre invitation</h3>
+<p style="margin: 0; font-size: 16px; line-height: 1.55; color: #3A3556">Vous la trouverez dans l'événement du séminaire, dans votre agenda.</p>
 </div>
 </div>
 </div>
@@ -321,7 +377,7 @@ a{color:#3C0094}a:hover{color:#1E0050}
 <p style="margin: 0; font-size: 15px; color: #3A3556">Métro 7 · Porte de la Villette</p>
 </div>
 </div>
-<ol style="margin: 0; padding: 0; list-style: none; display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px">
+<ol style="margin: 0; padding: 0; list-style: none; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(260px, 100%), 1fr)); gap: 20px">
 <li style="display: flex; flex-direction: column; gap: 16px; padding: 16px; border-radius: 24px; background: #FFFFFF; border: 1px solid #E6DCFF">
 <img src="./assets/320f27f77baace121aee013cc98c3729.jpg" alt="Panneau indiquant la Bibliothèque au niveau -1" style="width: 100%; height: 240px; object-fit: cover; object-position: center 30%; border-radius: 16px; display: block">
 <div style="display: flex; gap: 14px; align-items: flex-start; padding: 0 8px 8px">
@@ -357,7 +413,7 @@ a{color:#3C0094}a:hover{color:#1E0050}
 <p style="margin: 0; font-size: 14px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #3C0094">Après les talks</p>
 <h2 style="margin: 0; font-size: clamp(2rem, 4vw, 3rem); font-weight: 800; letter-spacing: -0.01em; color: #0F0A1E">On prolonge la journée</h2>
 </div>
-<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 20px">
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(320px, 100%), 1fr)); gap: 20px">
 <div style="display: flex; flex-direction: column; border-radius: 24px; overflow: hidden; background: #DDF6FB">
 <img src="./assets/f7ad437fb5c31790bcf3b518afaa8fa0.jpg" alt="La Géode et la Cité des sciences" style="width: 100%; height: 280px; object-fit: cover; display: block">
 <div style="flex: 1; padding: 24px 28px 28px; display: flex; flex-direction: column; gap: 8px">
